@@ -1,0 +1,55 @@
+{
+    "models": [
+        {
+            "name": "RandomForestGini-BAG-L1-FULL",
+            "accuracy": 0.8001549186676995,
+            "f1": 0.6806930693069307,
+            "balanced_accuracy": 0.75372847970121,
+            "auc": 0.7796788263283109,
+            "precision": 0.8513931888544891,
+            "recall": 0.5670103092783505,
+            "log_loss": 1.5144939625242548
+        },
+        {
+            "name": "RandomForestEntr-BAG-L1-FULL",
+            "accuracy": 0.7997676219984509,
+            "f1": 0.6762680025046963,
+            "balanced_accuracy": 0.7513654038013865,
+            "auc": 0.7835876544473153,
+            "precision": 0.861244019138756,
+            "recall": 0.5567010309278351,
+            "log_loss": 1.5120507505759948
+        },
+        {
+            "name": "ExtraTreesGini-BAG-L1-FULL",
+            "accuracy": 0.8086754453911696,
+            "f1": 0.6869455006337136,
+            "balanced_accuracy": 0.758909979279118,
+            "auc": 0.7808658003120923,
+            "precision": 0.8914473684210527,
+            "recall": 0.5587628865979382,
+            "log_loss": 1.430564877779596,
+            "inference_latency": 0.14986765433891033
+        },
+        {
+            "name": "ExtraTreesEntr-BAG-L1-FULL",
+            "accuracy": 0.8075135553834237,
+            "f1": 0.6848446417247939,
+            "balanced_accuracy": 0.7575688777467959,
+            "auc": 0.7803298713258807,
+            "precision": 0.8896210873146623,
+            "recall": 0.5567010309278351,
+            "log_loss": 1.4203094386876916
+        },
+        {
+            "name": "WeightedEnsemble-L2-FULL",
+            "accuracy": 0.8086754453911696,
+            "f1": 0.6869455006337136,
+            "balanced_accuracy": 0.758909979279118,
+            "auc": 0.7808658003120923,
+            "precision": 0.8914473684210527,
+            "recall": 0.5587628865979382,
+            "log_loss": 1.430564877779596
+        }
+    ]
+}
