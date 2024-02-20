@@ -1,0 +1,10 @@
+
+ 
+# Ignore Kaggle File
+kaggle_competition/.kaggle
+
+ 
+# Ignore pickles
+*.pkl
+**/*.pkl
+

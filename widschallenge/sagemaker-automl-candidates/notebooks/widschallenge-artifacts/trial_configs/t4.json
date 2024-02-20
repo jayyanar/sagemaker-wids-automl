@@ -1,0 +1,122 @@
+{
+    "ProcessingJobArn": "arn:aws:sagemaker:us-east-1:098493093308:processing-job/widschallenge-t4-1-ef165cebdece40c6a2eff238968be654866c6ec44f33",
+    "ProcessingJobName": "widschallenge-t4-1-ef165cebdece40c6a2eff238968be654866c6ec44f33",
+    "Environment": {
+        "auto_ml_job_arn": "arn:aws:sagemaker:us-east-1:098493093308:automl-job/widschallenge",
+        "auto_stack": "true",
+        "component_job_step_name": "t4",
+        "content_type": "text/csv;header=present",
+        "disable_feature_importance": "false",
+        "disable_model_insights": "false",
+        "enable_local_model_insights": "True",
+        "enable_stratified_split": "true",
+        "enable_validation_split": "true",
+        "included_model_types": "XGB, GBM, CAT, XT, RF, NN_TORCH, FASTAI",
+        "input_channel_mode": "Pipe",
+        "instance_type": "ml.r5.16xlarge",
+        "job_name": "widschallenge",
+        "label_col": "DiagPeriodL90D",
+        "max_dataset_size": "100",
+        "max_subsampled_dataset_size": "5",
+        "num_bag_sets": "1",
+        "num_stack_levels": "0",
+        "presets": "good_quality",
+        "region": "us-east-1",
+        "time_limit": "172800",
+        "trial_id_suffix": "t4098493093308widschallenge"
+    },
+    "AppSpecification": {
+        "ImageUri": "473393118567.dkr.ecr.us-east-1.amazonaws.com/autopilot-autogluon:1",
+        "ContainerEntrypoint": null,
+        "ContainerArguments": null
+    },
+    "ProcessingInputs": [
+        {
+            "InputName": "train",
+            "AppManaged": false,
+            "S3Input": {
+                "LocalPath": "/opt/ml/processing/input/data/train",
+                "S3Uri": "s3://wids-challenge-aj/training.csv",
+                "S3DataDistributionType": "FullyReplicated",
+                "S3DataType": "S3Prefix",
+                "S3InputMode": "Pipe",
+                "S3CompressionType": null,
+                "S3DownloadMode": "StartOfJob"
+            },
+            "DatasetDefinition": null
+        }
+    ],
+    "ProcessingOutputConfig": {
+        "Outputs": [
+            {
+                "OutputName": "ds",
+                "AppManaged": false,
+                "S3Output": {
+                    "LocalPath": "/opt/ml/processing/output/channels/ds",
+                    "S3Uri": "s3://wids-challenge-aj/widschallenge",
+                    "S3UploadMode": "EndOfJob"
+                },
+                "FeatureStoreOutput": null
+            },
+            {
+                "OutputName": "output",
+                "AppManaged": false,
+                "S3Output": {
+                    "LocalPath": "/opt/ml/processing/output/channels/artifacts",
+                    "S3Uri": "s3://wids-challenge-aj/widschallenge/sagemaker-automl-candidates",
+                    "S3UploadMode": "EndOfJob"
+                },
+                "FeatureStoreOutput": null
+            },
+            {
+                "OutputName": "explainability",
+                "AppManaged": false,
+                "S3Output": {
+                    "LocalPath": "/opt/ml/processing/output/channels/explainability",
+                    "S3Uri": "s3://wids-challenge-aj/widschallenge/documentation/explainability/output/widschallenge-t4-1-ef165cebdece40c6a2eff238968be654866c6ec44f33",
+                    "S3UploadMode": "EndOfJob"
+                },
+                "FeatureStoreOutput": null
+            },
+            {
+                "OutputName": "model_monitor",
+                "AppManaged": false,
+                "S3Output": {
+                    "LocalPath": "/opt/ml/processing/output/channels/model_monitor",
+                    "S3Uri": "s3://wids-challenge-aj/widschallenge/documentation/model_monitor",
+                    "S3UploadMode": "EndOfJob"
+                },
+                "FeatureStoreOutput": null
+            },
+            {
+                "OutputName": "upstream",
+                "AppManaged": null,
+                "S3Output": {
+                    "LocalPath": "/opt/ml/processing/upstream/output/agt",
+                    "S3Uri": "s3://agt-artifacts-022883644449-us-east-1-prod/autogluontabular-artifacts/widschallenge-t4-1-ef165cebdece40c6a2eff238968be654866c6ec44f33",
+                    "S3UploadMode": "EndOfJob"
+                },
+                "FeatureStoreOutput": null
+            }
+        ],
+        "KmsKeyId": null
+    },
+    "ProcessingResources": {
+        "ClusterConfig": {
+            "InstanceCount": 1,
+            "InstanceType": "ml.r5.16xlarge",
+            "VolumeSizeInGB": 250,
+            "VolumeKmsKeyId": null
+        }
+    },
+    "NetworkConfig": {
+        "VpcConfig": null,
+        "EnableNetworkIsolation": true,
+        "EnableInterContainerTrafficEncryption": true
+    },
+    "RoleArn": "arn:aws:iam::098493093308:role/service-role/AmazonSageMaker-ExecutionRole-20220719T144016",
+    "StoppingCondition": {
+        "MaxRuntimeInSeconds": 172800
+    },
+    "AGTInferenceImage": "763104351884.dkr.ecr.us-east-1.amazonaws.com/autogluon-inference:0.4.3-cpu-py38-ubuntu20.04"
+}
