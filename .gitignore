@@ -3,6 +3,9 @@
 # Ignore Kaggle File
 kaggle_competition/.kaggle
 
+
+# Ignore Kaggle File
+kaggle_competition/AutoGluonModels
  
 # Ignore pickles
 *.pkl
